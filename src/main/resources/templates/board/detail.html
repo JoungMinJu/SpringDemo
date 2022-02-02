@@ -19,15 +19,11 @@
 
     <form id="delete-form" th:action="@{'/post/' + ${boardDto.id}}" method="post">
         <input type="hidden" name="_method" value="delete"/>
-        <!-- RESTful API의 작성을 위해 hiddenHttpMethodFilter를 이용-->
-        <!-- 그려면 form 태그의 method는 post지만, 실제로는 컨트롤러에서  delete로 매핑된다.-->
         <button id="delete-btn">삭제</button>
     </form>
 </div>
 
 <!-- 변수 셋팅 -->
-<!-- /* 어쩌구저쩌구가 JS에서 java 변수 사용하기 위한 방식.-->
-<!-- boardDto를 콘솔로 출력하는 스크립트를 작성하였으므로 게시글 상세 페이지에 접근시, 개발자도구 콘솔창에서 확인 가능-->
 <script th:inline="javascript">
     /*<![CDATA[*/
     var boardDto = /*[[${boardDto}]]*/ "";
